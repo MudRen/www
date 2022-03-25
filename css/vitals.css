@@ -1,0 +1,24 @@
+
+.L1 { width: 2em; }
+.L2 { width: 3em; }
+.L3 { width: 3.5em; }
+.L4 { width: 5em; }
+
+#gin_w1, #kee_w1, #sen_w1 { width: 6em; }
+#gin_w2, #kee_w2, #sen_w2 { width: 4em; }
+#food_w, #water_w { width: 9em; }
+
+#gin, #eff_gin, #kee, #eff_kee, #sen, #eff_sen, #atman, #max_atman, #force, #max_force, #mana, #max_mana {
+    text-align: right;
+    width: 2.5em;
+}
+
+#max_gin, #max_kee, #max_sen {
+    text-align: right;
+    width: 1.5em;
+}
+
+#food, #max_food, #water, #max_water {
+    text-align: right;
+    width: 2.5em;
+}

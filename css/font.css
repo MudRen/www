@@ -1,0 +1,18 @@
+@font-face {
+    font-family: en;
+    src: url(../font/inconsolata.woff);
+}
+
+@font-face {
+    font-family: sym;
+    src: url(../font/symmingliu.woff);
+}
+
+@font-face {
+    font-family: zh;
+    src: local("Lantinghei TC"), local("MingLiU_HKSCS");
+}
+
+html {
+    font-family: en, sym, zh;
+}

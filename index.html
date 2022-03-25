@@ -1,46 +1,125 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE HTML>
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <title>FluffOS v2019</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
-
-  <link rel="stylesheet" href="normalize.css"/>
-  <link rel="stylesheet" href="xterm.css"/>
-  <style>
-    @font-face {
-      font-family: 'Noto Sans Mono';
-      src: url('NotoSansMono-VariableFont_wdth,wght.ttf') format("truetype");
-      font-variation-settings: 'wght' 400;
-    }
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Noto Sans Mono', monospace;
-      font-size: medium;
-    }
-  </style>
-
-  <script src="xterm.min.js"></script>
-  <script src="xterm-addon-attach.min.js"></script>
-  <script src="xterm-addon-fit.min.js"></script>
-  <script src="xterm-addon-web-links.min.js"></script>
-  <script src="widechar_width.js"></script>
-  <script src="xterm-addon-unicode14.js"></script>
-  <script src="jquery.min.js"></script>
-  <script src="fontobserver.js"></script>
-  <script src="example.js"></script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <base href="/">
+    <link href="/css/web.css" rel="stylesheet" type="text/css">
+    <!-- <link href="/css/vitals.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.13.0/css/xterm.css">
+    <script src="https://cdn.jsdelivr.net/npm/xterm@4.13.0/lib/xterm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.5.0/lib/xterm-addon-fit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-unicode11@0.2.0/lib/xterm-addon-unicode11.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-web-links@0.4.0/lib/xterm-addon-web-links.min.js"></script>
+    <title>MudClient@Mud.Ren！</title>
 </head>
-<body>
-<!--[if IE]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-<![endif]-->
-<div id="container" style="position:relative; display: flex; flex-direction: column; height: 100vh; margin: 0; padding: 0;">
-  <div id="terminal" style="flex: 1"></div>
-  <input id="command" style="height: 15px; width: 100%" />
-</div>
+
+<body class="B0 N7">
+    <div id="main">
+        <div data-unsupported="抱歉！您使用的瀏覽器無法連線！" id="content"><span id="message"></span></div>
+        <div id="macro_table">
+            <span class="B4" id="macro_header">巨集／快速鍵</span>
+            <div class="title"><span class="num">#</span><span class="key">按鍵組合</span><span class="command">指令</span>
+            </div>
+            <div id="macro_list_wrapper">
+                <div id="macro_list"></div>
+            </div>
+            <div class="table_footer">
+                <button class="B7 right" id="close_macro" tabindex="-1">關閉</button>
+            </div>
+        </div>
+        <div id="setting_table">
+            <span class="B4" id="setting_header">設定</span>
+            <div class="font_setting">
+                <span class="font_header">字型</span>
+                <input class="B7 N0" id="font" tabindex="-1" type="text" />
+            </div>
+            <div class="color_setting">
+                <span class="color_header">色彩</span>
+                <ul class="color_list">
+                    <li><label><input name="color_name" tabindex="-1" type="radio" value="VGA" /> Standard VGA</label>
+                    </li>
+                    <li><label><input name="color_name" tabindex="-1" type="radio" value="XP" /> Windows CMD</label>
+                    </li>
+                    <li><label><input name="color_name" tabindex="-1" type="radio" value="Mac" /> OS X Terminal</label>
+                    </li>
+                    <li><label><input name="color_name" tabindex="-1" type="radio" value="PuTTY" /> PuTTY</label></li>
+                    <li><label><input name="color_name" tabindex="-1" type="radio" value="mIRC" /> mIRC</label></li>
+                    <li><label><input name="color_name" tabindex="-1" type="radio" value="XTerm" /> XTerm</label></li>
+                    <li><label><input name="color_name" tabindex="-1" type="radio" value="Monochrome" />
+                            Monochrome</label></li>
+                </ul>
+            </div>
+            <div class="other_setting">
+                <ul class="other_list">
+                    <li><label><input id="clean_command" tabindex="-1" type="checkbox" />送出指令後，清空指令輸入框</label></li>
+                    <li><label><input id="translucent" tabindex="-1" type="checkbox" />半透明的狀態／地圖視窗</label></li>
+                    <li><label><input id="reborn_audio" tabindex="-1" type="checkbox" />ReBorn 音效</label></li>
+                    <li><label><input id="auto_login" tabindex="-1" type="checkbox" />自動登入</label></li>
+                    <li><label id="username_w">帳號 <input class="B7 N0" id="username" tabindex="-1"
+                                type="text" /></label> <label>密碼 <input class="B7 N0" id="password" tabindex="-1"
+                                type="password" /></label><br> <label>巫師密碼 <input class="B7 N0" id="wpassword"
+                                tabindex="-1" type="password" /></label></li>
+                </ul>
+            </div>
+            <div class="table_footer">
+                <button class="B7 left" data-success="儲存成功" data-failed="儲存失敗" data-processing="處理中..." disabled
+                    id="backup_setting" tabindex="-1">儲存</button>
+                <button class="B7 left" data-success="載入成功" data-failed="載入失敗" data-processing="處理中..."
+                    data-not-found="查無資料" disabled id="restore_setting" tabindex="-1">載入</button>
+                <button class="B7 right" id="close_setting" tabindex="-1">關閉</button>
+            </div>
+        </div>
+        <div id="map_table">
+            <span class="B4" id="map_header">地圖 (<span data-default-grid="□"></span>)</span>
+            <div id="map_wrapper"></div>
+            <div id="map_anchor"></div>
+        </div>
+        <div id="monitor">
+            <span class="L1">精:</span><span id="gin_w1"><span id="gin"> </span>/<span id="eff_gin"> </span></span><span
+                id="gin_w2"> (<span id="max_gin"> </span>%)</span><span class="L2">靈力:</span><span id="atman_w"><span
+                    id="atman"> </span> /<span id="max_atman"> </span> (+<span id="atman_factor"> </span>)</span><br />
+            <span class="L1">氣:</span><span id="kee_w1"><span id="kee"> </span>/<span id="eff_kee"> </span></span><span
+                id="kee_w2"> (<span id="max_kee"> </span>%)</span><span class="L2">內力:</span><span id="force_w"><span
+                    id="force"> </span> /<span id="max_force"> </span> (+<span id="force_factor"> </span>)</span><br />
+            <span class="L1">神:</span><span id="sen_w1"><span id="sen"> </span>/<span id="eff_sen"> </span></span><span
+                id="sen_w2"> (<span id="max_sen"> </span>%)</span><span class="L2">法力:</span><span id="mana_w"><span
+                    id="mana"> </span> /<span id="max_mana"> </span> (+<span id="mana_factor"> </span>)</span><br />
+            <span class="L2">食物:</span><span id="food_w"><span id="food"> </span>/<span id="max_food">
+                </span></span><span class="L3">潛能:</span><span class="H3" id="pot"> </span><br />
+            <span class="L2">飲水:</span><span id="water_w"><span id="water"> </span>/<span id="max_water">
+                </span></span><span class="L3">經驗:</span><span class="H5" id="exp"> </span><br />
+            <span class="L4">目前狀態:</span><span id="status"> </span>
+            <div class="cooldown" id="perform"></div>
+            <div class="cooldown" id="busy"></div>
+            <div class="H0" id="delay"></div>
+        </div>
+        <div class="H7 B1 invisible" id="notice"> <span> 秒後重新連線...</span></div>
+    </div>
+    <div id="buttons">
+        <div class="N6" id="version">MudRen</div>
+        <button class="B7" id="connect" tabindex="-1">连线</button>
+        <button class="B7" id="macro" tabindex="-1" title="Ctrl+M">按键</button>
+        <button class="B7" id="setting" tabindex="-1" title="Ctrl+P">设定</button>
+        <button class="B7" disabled id="hp" tabindex="-1" title="Ctrl+H">状态</button>
+        <button class="B7" disabled id="map" tabindex="-1">地图</button>
+        <button class="B7" disabled id="channel" tabindex="-1">消息</button>
+        <button class="B7" id="lock" tabindex="-1" title="Ctrl+L">锁定</button>
+        <div class="H7" id="uptime"> </div>
+    </div>
+    <form id="form">
+        <input autocapitalize="off" autocomplete="off" autocorrect="off" class="B7 N0" id="input" type="text" />
+    </form>
+    <audio id="beep">
+        <!-- <source src="/audio/beep.mp3" type="audio/mpeg"/> -->
+        <!-- <source src="/audio/beep.wav" type="audio/wav"/> -->
+    </audio>
+    <audio id="reborn">
+        <!-- <source src="/audio/reborn.mp3" type="audio/mpeg"/> -->
+    </audio>
+    <script src="/js/web.js"></script>
+    <!-- <script src="/js/vitals.js"></script> -->
 </body>
 
 </html>

@@ -1,0 +1,175 @@
+.N0 { color: rgb(  0,  0,  0); }
+.N7 { color: rgb(229,229,229); }
+
+.H1 { color: rgb(255,  0,  0); }
+.H2 { color: rgb(  0,255,  0); }
+.H3 { color: rgb(255,255,  0); }
+.H5 { color: rgb(255,  0,255); }
+.H6 { color: rgb(  0,255,255); }
+.H7 { color: rgb(255,255,255); }
+
+.B0 { background-color: rgb(0,0,0); }
+
+.VGA .N1 { color: rgb(170,  0,  0); }
+.VGA .N2 { color: rgb(  0,170,  0); }
+.VGA .N3 { color: rgb(170, 85,  0); }
+.VGA .N4 { color: rgb(  0,  0,170); }
+.VGA .N5 { color: rgb(170,  0,170); }
+.VGA .N6 { color: rgb(  0,170,170); }
+.VGA .N7 { color: rgb(170,170,170); }
+
+.VGA .H0 { color: rgb( 85, 85, 85); }
+.VGA .H1 { color: rgb(255, 85, 85); }
+.VGA .H2 { color: rgb( 85,255, 85); }
+.VGA .H3 { color: rgb(255,255, 85); }
+.VGA .H4 { color: rgb( 85, 85,255); }
+.VGA .H5 { color: rgb(255, 85,255); }
+.VGA .H6 { color: rgb( 85,255,255); }
+
+.VGA .B1 { background-color: rgb(170,  0,  0); }
+.VGA .B2 { background-color: rgb(  0,170,  0); }
+.VGA .B3 { background-color: rgb(170, 85,  0); }
+.VGA .B4 { background-color: rgb(  0,  0,170); }
+.VGA .B5 { background-color: rgb(170,  0,170); }
+.VGA .B6 { background-color: rgb(  0,170,170); }
+.VGA .B7 { background-color: rgb(170,170,170); }
+
+.XP .N1 { color: rgb(128,  0,  0); }
+.XP .N2 { color: rgb(  0,128,  0); }
+.XP .N3 { color: rgb(128,128,  0); }
+.XP .N4 { color: rgb(  0,  0,128); }
+.XP .N5 { color: rgb(128,  0,128); }
+.XP .N6 { color: rgb(  0,128,128); }
+.XP .N7 { color: rgb(192,192,192); }
+
+.XP .H0 { color: rgb(128,128,128); }
+.XP .H4 { color: rgb(  0,  0,255); }
+
+.XP .B1 { background-color: rgb(128,  0,  0); }
+.XP .B2 { background-color: rgb(  0,128,  0); }
+.XP .B3 { background-color: rgb(128,128,  0); }
+.XP .B4 { background-color: rgb(  0,  0,128); }
+.XP .B5 { background-color: rgb(128,  0,128); }
+.XP .B6 { background-color: rgb(  0,128,128); }
+.XP .B7 { background-color: rgb(192,192,192); }
+
+.Mac .N1 { color: rgb(194, 54, 33); }
+.Mac .N2 { color: rgb( 37,188, 36); }
+.Mac .N3 { color: rgb(173,173, 39); }
+.Mac .N4 { color: rgb( 73, 46,225); }
+.Mac .N5 { color: rgb(211, 56,211); }
+.Mac .N6 { color: rgb( 51,187,200); }
+.Mac .N7 { color: rgb(203,204,205); }
+
+.Mac .H0 { color: rgb(129,131,131); }
+.Mac .H1 { color: rgb(252, 57, 31); }
+.Mac .H2 { color: rgb( 49,231, 34); }
+.Mac .H3 { color: rgb(234,236, 35); }
+.Mac .H4 { color: rgb( 88, 51,255); }
+.Mac .H5 { color: rgb(249, 53,248); }
+.Mac .H6 { color: rgb( 20,240,240); }
+.Mac .H7 { color: rgb(233,235,235); }
+
+.Mac .B1 { background-color: rgb(194, 54, 33); }
+.Mac .B2 { background-color: rgb( 37,188, 36); }
+.Mac .B3 { background-color: rgb(173,173, 39); }
+.Mac .B4 { background-color: rgb( 73, 46,225); }
+.Mac .B5 { background-color: rgb(211, 56,211); }
+.Mac .B6 { background-color: rgb( 51,187,200); }
+.Mac .B7 { background-color: rgb(203,204,205); }
+
+.PuTTY .N1 { color: rgb(187,  0,  0); }
+.PuTTY .N2 { color: rgb(  0,187,  0); }
+.PuTTY .N3 { color: rgb(187,187,  0); }
+.PuTTY .N4 { color: rgb(  0,  0,187); }
+.PuTTY .N5 { color: rgb(187,  0,187); }
+.PuTTY .N6 { color: rgb(  0,187,187); }
+.PuTTY .N7 { color: rgb(187,187,187); }
+
+.PuTTY .H0 { color: rgb( 85, 85, 85); }
+.PuTTY .H1 { color: rgb(255, 85, 85); }
+.PuTTY .H2 { color: rgb( 85,255, 85); }
+.PuTTY .H3 { color: rgb(255,255, 85); }
+.PuTTY .H4 { color: rgb( 85, 85,255); }
+.PuTTY .H5 { color: rgb(255, 85,255); }
+.PuTTY .H6 { color: rgb( 85,255,255); }
+
+.PuTTY .B1 { background-color: rgb(187,  0,  0); }
+.PuTTY .B2 { background-color: rgb(  0,187,  0); }
+.PuTTY .B3 { background-color: rgb(187,187,  0); }
+.PuTTY .B4 { background-color: rgb(  0,  0,187); }
+.PuTTY .B5 { background-color: rgb(187,  0,187); }
+.PuTTY .B6 { background-color: rgb(  0,187,187); }
+.PuTTY .B7 { background-color: rgb(187,187,187); }
+
+.mIRC .N1 { color: rgb(127,  0,  0); }
+.mIRC .N2 { color: rgb(  0,147,  0); }
+.mIRC .N3 { color: rgb(252,127,  0); }
+.mIRC .N4 { color: rgb(  0,  0,127); }
+.mIRC .N5 { color: rgb(156,  0,156); }
+.mIRC .N6 { color: rgb(  0,147,147); }
+.mIRC .N7 { color: rgb(210,210,210); }
+
+.mIRC .H0 { color: rgb(127,127,127); }
+.mIRC .H2 { color: rgb(  0,252,  0); }
+.mIRC .H4 { color: rgb(  0,  0,252); }
+
+.mIRC .B1 { background-color: rgb(127,  0,  0); }
+.mIRC .B2 { background-color: rgb(  0,147,  0); }
+.mIRC .B3 { background-color: rgb(252,127,  0); }
+.mIRC .B4 { background-color: rgb(  0,  0,127); }
+.mIRC .B5 { background-color: rgb(156,  0,156); }
+.mIRC .B6 { background-color: rgb(  0,147,147); }
+.mIRC .B7 { background-color: rgb(210,210,210); }
+
+.XTerm .N1 { color: rgb(205,  0,  0); }
+.XTerm .N2 { color: rgb(  0,205,  0); }
+.XTerm .N3 { color: rgb(205,205,  0); }
+.XTerm .N4 { color: rgb(  0,  0,238); }
+.XTerm .N5 { color: rgb(205,  0,205); }
+.XTerm .N6 { color: rgb(  0,205,205); }
+
+.XTerm .H0 { color: rgb(127,127,127); }
+.XTerm .H4 { color: rgb( 92, 92,255); }
+
+.XTerm .B1 { background-color: rgb(205,  0,  0); }
+.XTerm .B2 { background-color: rgb(  0,205,  0); }
+.XTerm .B3 { background-color: rgb(205,205,  0); }
+.XTerm .B4 { background-color: rgb(  0,  0,238); }
+.XTerm .B5 { background-color: rgb(205,  0,205); }
+.XTerm .B6 { background-color: rgb(  0,205,205); }
+.XTerm .B7 { background-color: rgb(229,229,229); }
+
+.Monochrome .N1 { color: rgb( 93, 93, 93); }
+.Monochrome .N2 { color: rgb(126,126,126); }
+.Monochrome .N3 { color: rgb(158,158,158); }
+.Monochrome .N4 { color: rgb( 74, 74, 74); }
+.Monochrome .N5 { color: rgb(120,120,120); }
+.Monochrome .N6 { color: rgb(148,148,148); }
+.Monochrome .N7 { color: rgb(204,204,204); }
+
+.Monochrome .H0 { color: rgb( 85, 85, 85); }
+.Monochrome .H1 { color: rgb(136,136,136); }
+.Monochrome .H2 { color: rgb(185,185,185); }
+.Monochrome .H3 { color: rgb(236,236,236); }
+.Monochrome .H4 { color: rgb(104,104,104); }
+.Monochrome .H5 { color: rgb(155,155,155); }
+.Monochrome .H6 { color: rgb(204,204,204); }
+
+.Monochrome .B1 { background-color: rgb( 93, 93, 93); }
+.Monochrome .B2 { background-color: rgb(126,126,126); }
+.Monochrome .B3 { background-color: rgb(158,158,158); }
+.Monochrome .B4 { background-color: rgb( 74, 74, 74); }
+.Monochrome .B5 { background-color: rgb(120,120,120); }
+.Monochrome .B6 { background-color: rgb(148,148,148); }
+.Monochrome .B7 { background-color: rgb(204,204,204); }
+
+.I { font-style: italic; }
+
+.K { animation: blink 1.5s steps(3, start) infinite; }
+
+.U { text-decoration: underline; }
+
+@keyframes blink {
+    to { visibility: hidden; }
+}

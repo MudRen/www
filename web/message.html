@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <base href="/">
+        <link href="/css/web.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            #main {
+                bottom: 5px;
+                left: 5px;
+            }
+            #message {
+                position: static;
+            }
+        </style>
+        <title>异想世界的訊息</title>
+    </head>
+    <body class="B0 N7">
+        <div id="main">
+            <div id="content"><span id="message"><span class="N7"></span></span><br/></div>
+        </div>
+        <script>
+            var A, SPAN, container, frozen, main, message, node, url_pattern;
+
+            A = document.createElement("A");
+            SPAN = document.createElement('span');
+            container = document.getElementById('content');
+            main = document.getElementById('main');
+            message = document.getElementById('message');
+            node = message.firstChild;
+            url_pattern = /\bhttps?:\/\/[-\w+&@#\/%?=~|!:,.;]*[-\w+&@#\/%=~|]/g;
+
+            function change_color_class() {
+                document.documentElement.className = opener.get_color_class();
+            }
+
+            function change_font_family() {
+                main.style.fontFamily = 'en, sym, "' + opener.get_font_family() + '", zh';
+            }
+
+            function on_mouse_wheel() {
+                if (this.scrollTop < this.scrollHeight - this.clientHeight) {
+                    if (!frozen) {
+                        frozen = true;
+                        main.style.borderColor = '#b00';
+                    }
+                } else {
+                    if (frozen) {
+                        frozen = false;
+                        main.style.borderColor = '#bbb';
+                    }
+                }
+            }
+
+            function wrap_url(wrapper, match) {
+                var anchor, idx, text;
+
+                while (wrapper.firstChild) {
+                    wrapper.removeChild(wrapper.firstChild);
+                }
+
+                idx = 0;
+                text = match.input;
+
+                while (match) {
+                    if (idx !== match.index) {
+                        wrapper.appendChild(document.createTextNode(text.substring(idx, match.index)));
+                    }
+
+                    anchor = A.cloneNode(false);
+                    anchor.className = "url";
+                    anchor.href = match[0];
+                    anchor.tabIndex = -1;
+                    anchor.target = "_blank";
+                    anchor.textContent = match[0];
+
+                    wrapper.appendChild(anchor);
+
+                    idx = url_pattern.lastIndex;
+                    match = url_pattern.exec(text);
+                }
+
+                text = text.substring(idx);
+
+                if (text) {
+                    wrapper.appendChild(document.createTextNode(text));
+                }
+
+                return wrapper;
+            }
+
+            function write_message(className, content) {
+                var element, match;
+
+                if (node.className !== className) {
+                    node = SPAN.cloneNode();
+                    node.className = className;
+
+                    message.appendChild(node);
+                }
+
+                match = url_pattern.exec(content);
+
+                if (match) {
+                    element = wrap_url(SPAN.cloneNode(), match);
+                } else {
+                    element = document.createTextNode(content);
+                }
+
+                node.appendChild(element);
+
+                if (!frozen) {
+                    container.scrollTop = 10000000;
+                }
+            }
+
+            function add_message(className, time, content) {
+                setTimeout(function () {
+                    if (time) {
+                        write_message('N7', '[' + time + '] ');
+                    }
+
+                    write_message(className, content);
+                }, 0);
+            }
+
+            window.onunload = function () {
+                opener.unload_msg_window();
+            };
+
+            container.addEventListener('wheel', on_mouse_wheel);
+
+            document.title = opener.get_char_id() + " - " + document.title;
+
+            change_color_class();
+            change_font_family();
+        </script>
+    </body>
+</html>

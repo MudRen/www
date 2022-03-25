@@ -1,0 +1,572 @@
+@import url(ansi.css);
+@import url(font.css);
+
+/* Common */
+
+a {
+       display: inline-block;
+        border: solid 1px gray;
+        color: gray;
+        background-color: black;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25em;
+        min-width: 0.5em;
+         position: relative;
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+}
+
+a.url {
+    color: inherit;
+}
+
+
+b {
+  
+}
+
+b.url {
+    color: inherit;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+}
+
+input {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 9px 0 0 20px;
+}
+
+.invisible {
+    display: none;
+}
+
+.table_footer {
+    border-top: 1px dashed #BBBBBB;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 35px;
+    padding: 4px 8px;
+    position: absolute;
+    width: 100%;
+}
+
+.table_footer button {
+    border: 0;
+    height: 26px;
+    font-size: 16px;
+}
+
+.table_footer .left {
+    width: 6em;
+}
+
+.table_footer .right {
+    float: right;
+}
+
+/* Function */
+
+#buttons {
+    border: 1px dashed #BBBBBB;
+    bottom: 5px;
+    left: 5px;
+    overflow-y: hidden;
+    padding: 3px;
+    position: absolute;
+    top: 5px;
+    width: 62px;
+}
+
+#buttons button {
+    border: 0;
+    font-size: 20px;
+    height: 62px;
+    margin-top: 3px;
+    padding: 0;
+    width: 62px;
+}
+
+#connect.pressed {
+    background-color: #BBFFBB;
+}
+
+#connect.pressing {
+    background-color: #EECCAA;
+}
+
+#help {
+    margin-top: 5px;
+    text-align: center;
+}
+
+#help a {
+    color: white;
+    font-size: 12px;
+}
+
+#uptime {
+    bottom: 7px;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    width: 62px;
+}
+
+#version {
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Input */
+
+#delay {
+    bottom: 10px;
+    position: absolute;
+    right: 10px;
+}
+
+#form {
+    bottom: 5px;
+    height: 34px;
+    left: 80px;
+    position: absolute;
+    right: 5px;
+}
+
+#input {
+    font-size: 18px;
+    height: 100%;
+    padding: 5px;
+    width: 100%;
+}
+
+/* Main */
+
+#content {
+    bottom: 5px;
+    left: 5px;
+    overflow: auto;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+#main {
+    border: 1px dashed #BBBBBB;
+    bottom: 45px;
+    left: 80px;
+    overflow: hidden;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+#message {
+    bottom: 0;
+    left: 0;
+    line-height: 20px;
+    position: absolute;
+    white-space: pre-wrap;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+#message::after {
+    content: " ";
+}
+
+#notice {
+    left: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 5px;
+    width: 9em;
+    z-index: 1000000;
+}
+
+/* Macro */
+
+#map_header, #macro_header, #setting_header {
+    border-bottom: 1px dashed #BBBBBB;
+    cursor: move;
+    line-height: 32px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#macro_list {
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    right: -50px;
+    top: 0;
+}
+
+#macro_list input {
+    margin: 0 0 1px 1px;
+    height: 23px;
+    padding: 4px;
+}
+
+#macro_list_wrapper {
+    bottom: 40px;
+    overflow: hidden;
+    position: absolute;
+    top: 64px;
+    width: 100%;
+}
+
+#macro_table {
+    background-color: #222222;
+    border: 1px dashed #BBBBBB;
+    height: 463px;
+    position: fixed;
+    visibility: hidden;
+    width: 435px;
+}
+
+#map_table span, #macro_table span, #setting_table span {
+    display: inline-block;
+    text-align: center;
+}
+
+#macro_table .command {
+    width: 250px;
+}
+
+#macro_table .key {
+    width: 155px;
+}
+
+#macro_table .num {
+    width: 25px;
+}
+
+#macro_table .title {
+    line-height: 32px;
+    position: absolute;
+    top: 32px;
+}
+
+/* Map */
+
+#map_anchor {
+    border: 1px solid red;
+    height: 27px;
+    left: 186px;
+    position: absolute;
+    top: 220px;
+    width: 29px;
+    z-index: -1;
+}
+
+#map_table {
+    background-color: #222222;
+    border: 1px dashed #BBBBBB;
+    height: 436px;
+    position: fixed;
+    visibility: hidden;
+    width: 400px;
+}
+
+#map_wrapper {
+    bottom: 3px;
+    left: 3px;
+    overflow: hidden;
+    position: absolute;
+    right: 3px;
+    top: 36px;
+}
+
+#map_wrapper div {
+    left: 0;
+    line-height: 18px;
+    margin-left: 190px;
+    margin-top: 190px;
+    position: absolute;
+    top: 0;
+    white-space: pre;
+}
+
+#map_wrapper div a {
+    text-decoration: none;
+}
+
+/* Monitor */
+
+#monitor {
+    background-color: #222222;
+    border: 1px dashed #BBBBBB;
+    cursor: move;
+    padding: 5px 5px 7px 5px;
+    position: fixed;
+    visibility: hidden;
+}
+
+#monitor span {
+    display: inline-block;
+}
+
+/* Setting */
+
+#setting_table {
+    background-color: #222222;
+    border: 1px dashed #BBBBBB;
+    height: 450px;
+    position: fixed;
+    visibility: hidden;
+    width: 310px;
+}
+
+.color_header {
+    border-right: 1px dashed #BBBBBB;
+    left: 0;
+    line-height: 190px;
+    position: absolute;
+    width: 60px;
+}
+
+.color_list {
+    bottom: 0;
+    left: 60px;
+    line-height: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.color_setting {
+    border-bottom: 1px dashed #BBBBBB;
+    height: 190px;
+    position: absolute;
+    top: 72px;
+    width: 100%;
+}
+
+#font {
+    height: 24px;
+    margin: 8px 0 0 80px;
+    padding: 5px;
+    width: 200px;
+}
+
+.font_header {
+    border-right: 1px dashed #BBBBBB;
+    left: 0;
+    line-height: 39px;
+    position: absolute;
+    width: 60px;
+}
+
+.font_setting {
+    border-bottom: 1px dashed #BBBBBB;
+    height: 39px;
+    position: absolute;
+    top: 32px;
+    width: 100%;
+}
+
+.other_setting {
+    bottom: 30px;
+    height: 160px;
+    line-height: 22px;
+    position: absolute;
+    width: 100%;
+}
+
+.other_list input[type="checkbox"] {
+    text-align: center;
+    width: 23px;
+}
+
+#password, #username {
+    font-size: 14px;
+    width: 60px;
+}
+
+#username_w {
+}
+#wpassword {
+ margin-left: 23px;
+   font-size: 14px;
+   width: 100px;
+}
+
+/* Display */
+
+.display_macro #macro, .display_setting #setting, .display_monitor #hp, .display_map #map, .display_channel #channel {
+    background-color: #BBFFFF;
+}
+
+.display_macro #macro_table, .display_setting #setting_table, .display_monitor #monitor, .display_map #map_table {
+    visibility: visible;
+}
+
+.frozen #lock {
+    background-color: #FFBBBB;
+}
+
+.frozen #main {
+    border-color: #BB0000;
+}
+
+.frozen #message {
+    position: static;
+}
+
+.translucent #monitor, .translucent #map_table {
+    background-color: rgba(68,68,68,0.5);
+}
+
+/* ANSI Color */
+
+.Monochrome #map_anchor {
+    border-color: rgb(136,136,136);
+}
+
+.Monochrome #connect.pressed,
+.Monochrome #connect.pressing,
+.Monochrome .display_macro #macro,
+.Monochrome .display_setting #setting,
+.Monochrome .display_monitor #hp,
+.Monochrome .display_map #map,
+.Monochrome .display_channel #channel,
+.Monochrome .frozen #lock {
+    background-color: rgb(255,255,255);
+}
+
+.Monochrome .frozen #main {
+    border-color: rgb(255,255,255);
+}
+
+.X {
+    font-size: 20px;
+}
+
+/* Cool Down */
+
+#busy div {
+    background-color: red;
+}
+
+#perform div {
+    background-color: aqua;
+}
+
+.cooldown {
+    bottom: 2px;
+    left: 2px;
+    position: absolute;
+    right: 2px;
+}
+
+.cooldown div {
+    animation-name: cooldown;
+    animation-timing-function: linear;
+    height: 3px;
+    width: 0;
+    -webkit-animation-name: cooldown;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes cooldown {
+    from { width: 100%; }
+    to   { width: 0; }
+}
+
+@-webkit-keyframes cooldown {
+    from { width: 100%; }
+    to   { width: 0; }
+}
+
+/* Responsive Web Design */
+
+@media screen and (min-width: 1024px) {
+    #message {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-device-width: 768px) {
+    #buttons {
+        border: 0;
+        padding: 0;
+        width: 0;
+    }
+
+    #buttons button {
+        font-size: 18px;
+        height: 26px;
+    }
+
+    #connect {
+        left: 8px;
+        position: fixed;
+        top: 5px;
+    }
+
+    #connect.pressed {
+        display: none;
+    }
+
+    #hp {
+        bottom: 48px;
+        position: fixed;
+        right: 8px;
+    }
+
+    #lock {
+        position: fixed;
+        right: 8px;
+        top: 5px;
+    }
+
+    #form, #main {
+        left: 5px;
+    }
+
+    #message {
+        line-height: inherit;
+    }
+}
+
+/* iPhone 6 Plus */
+
+@media screen and (max-device-width: 414px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+/* iPhone 6 */
+
+@media screen and (max-device-width: 375px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+/* iPhone */
+
+@media screen and (max-device-width: 320px) {
+    html {
+        font-size: 7px;
+    }
+}
